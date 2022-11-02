@@ -1,0 +1,168 @@
+:root {
+    --board-size: 15;
+    --square-color: #E9E1CE;
+    --center-color: #FB1E6D;
+    --double-word-color: #F7216C;
+    --double-letter-color: #40C5FD;
+    --triple-word-color: #FB3A01;
+    --triple-letter-color: #023FFF;
+    --star-color: black;
+    --tile-color: #d3c7ac;
+}
+
+*:not(title) {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+#container {
+    width: min(100%, 54rem);
+    /* border: solid 1px black; */
+    height: 100%;
+    position: relative;
+    /* background: aliceblue; */
+    flex-direction: column;
+    gap: .5rem;
+    justify-content: space-around;
+}
+
+#board {
+    aspect-ratio: 1;
+    width: 100%;
+    position: relative;
+    /* flex-direction: column; */
+    top: 0;
+}
+
+.bottom, .top {
+    align-items: start;
+    height: calc(100%/7.5);
+    width: 100%;
+    gap: 1rem;
+}
+
+.letters {
+    height: 50%;
+    width: calc((100%/15)*7);
+    background: var(--square-color);
+}
+
+.row {
+    height: 100%;
+    width: calc(100%/var(--board-size));
+    border: solid 1px black;
+    display: flex;
+    flex-direction: column;
+}
+
+.square {
+    width: 100%;
+    height: calc(100%/var(--board-size));
+    border: solid 1px white;
+    background: var(--square-color);
+    position: relative;
+}
+
+.letters > .square {
+    width: calc(100%/7);
+    height: 100%;
+}
+
+.middle > .middle {
+    background: var(--double-word-color);
+}
+
+.DL {
+    background: var(--double-letter-color);
+}
+
+.DL::after {
+    display: inline-block;
+    content: "DL";
+}
+
+.DW {
+    background: var(--double-word-color);
+}
+
+.DW::after {
+    display: inline-block;
+    content: "DW";
+}
+
+.TL {
+    background: var(--triple-letter-color);
+}
+
+.TL::after {
+    display: inline-block;
+    content: "TL";
+}
+
+.TW {
+    background: var(--triple-word-color);
+}
+
+.TW::after {
+    display: inline-block;
+    content: "TW";
+}
+
+.tile {
+    font-size: 2rem;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--tile-color);
+    border: solid 1px gray;
+}
+
+.blank {
+    color: transparent;
+}
+
+.tile.blank {
+    color: white;
+}
+
+.value {
+    font-size: 1rem;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.history {
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    justify-content: start;
+}
+
+.score {
+    flex-direction: column;
+    height: 100%;
+    max-height: 100%;
+    position: relative;
+    justify-content: start;
+}
+
+.past-moves {
+    flex-direction: column;
+    overflow-y: scroll;
+    justify-content: start;
+    height: 50px;
+}
+
+.byplayer {
+    gap: 1rem;
+}

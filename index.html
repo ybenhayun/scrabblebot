@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="scrabble.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="scrabble.js"></script>
+    <script src="words.js"></script>
+    <title>ScrabbleBot</title>
+</head>
+<body>
+    <div id="container">
+        <div class="top">
+            <div class="letters idle">
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+            </div>
+        </div>
+
+        <div id="board"></div>
+
+        <div class="bottom">
+            <div class="score">
+                <h2>Current Score</h2>
+
+                <div class="byplayer">
+                    <ul class="playing history">
+                        <h3>Player 1: <span class = 'current'>0</span></h3>
+                        <div class="past-moves"></div>
+                    </ul>
+
+                    <ul class="idle history">
+                        <h3>Player 2: <span class = 'current'>0</span></h3>
+                        <div class="past-moves"></div>
+                    </ul>
+                </div>
+                <!-- <h3>Score: <span class = 'current'>0</span></h3>
+                <ul class="history"></ul> -->
+            </div>
+
+
+            <div class="letters playing">
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+            </div>
+            <button onclick="getPossibleWords()" class="place">Play Best Move</div>
+        </div>
+    </div>
+</body>
+</html>
